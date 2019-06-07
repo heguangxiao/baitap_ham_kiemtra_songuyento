@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="showMessage"></div>
+
+<script>
+    let showMessDiv = document.getElementById('showMessage');
+    let stringMEss='';
+
+    function isPrime(number) {
+        let flag = true;
+
+        if (number<2){
+            flag = false;
+        } else if (number==2){
+            flag = true;
+        } else if (number%2==0){
+            flag = false;
+        } else{
+            for (let i = 3; i < Math.sqrt(number); i+=2)
+            {
+                if (number % i == 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        return flag;
+    }
+
+    for (i=0;i<10001;i++){
+        if (isPrime(i)){
+            stringMEss += i+'<br>';
+        }
+    }
+
+    showMessDiv.innerHTML = stringMEss;
+</script>
+
+</body>
+</html>
